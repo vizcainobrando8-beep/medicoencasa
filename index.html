@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Asistente Médico</title>
+</head>
+<body style="font-family: Arial; background:#f2f2f2; padding: 20px;">
+
+  <h2>🩺 Asistente Médico</h2>
+
+  <p>Describe tus síntomas:</p>
+  <textarea id="sintomas" rows="4" cols="40"></textarea><br><br>
+  <button onclick="analizar()">Enviar</button>
+
+  <h3>Respuesta sugerida:</h3>
+  <p id="respuesta" style="background:white; padding:10px;"></p>
+
+  <script>
+    function analizar() {
+      let texto = document.getElementById("sintomas").value.toLowerCase();
+      let respuesta = "";
+
+      if (texto.includes("fiebre")) {
+        respuesta = "Recomendamos hidratarse y vigilar la temperatura.";
+      }
+      else if (texto.includes("tos")) {
+        respuesta = "Se recomienda líquidos tibios.";
+      }
+      else {
+        respuesta = "Consulta con un profesional de salud.";
+      }
+
+      document.getElementById("respuesta").innerText = respuesta;
+    }
+  </script>
+
+</body>
+</html>
